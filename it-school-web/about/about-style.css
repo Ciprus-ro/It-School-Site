@@ -1,0 +1,235 @@
+:root {
+  --background-dark: #141e4c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.5rem;
+  color: #eaeaea;
+}
+
+h2 {
+  font-size: 1.75rem;
+  color: #101d42;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #fbb44c;
+}
+
+p {
+  font-size: 0.91rem;
+  color: #2b2922;
+}
+
+.container {
+  max-width: 1200px;
+  min-width: 320px;
+  margin: auto;
+  padding: 1rem;
+}
+
+main {
+  flex-grow: 1;
+}
+
+/* ----------------------------------- Navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 8%;
+  background-color: var(--background-dark);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 170px;
+  height: auto;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-list > a,
+.dropdown > a {
+  color: white;
+  font-size: 0.91rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav-list a:hover {
+  color: #fbb44c;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  list-style: none;
+  background-color: var(--background-dark);
+}
+
+.dropdown:hover ul {
+  display: block;
+}
+
+.dropdown ul a {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+/* -----------------------------------FOOTER */
+footer {
+  background-color: #101d42;
+}
+
+footer p {
+  font-size: 0.75rem;
+  text-align: center;
+  color: #eaeaea;
+  padding: 1rem 0;
+}
+
+/* -----------------------------------TITLU ȘI CARDURI */
+.welcome {
+  background-color: #141e4c;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome h1 {
+  text-align: center;
+}
+
+/* --------------------------CARDURI--------------------------------- */
+
+.trainers .container.grid {
+  padding: 1rem 0.5rem;
+}
+
+.trainers .trainers-container {
+  padding-bottom: 1.75rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.trainers .trainer-wrapper {
+  width: 25%;
+  padding: 1.5rem 0.5rem;
+}
+
+.trainers .trainer {
+  width: 100%;
+  min-height: 350px;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.trainer:hover {
+  transform: translateY(-5px);
+}
+
+.trainers .image-wrapper {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -70px;
+}
+
+.trainer img {
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+}
+
+.trainer h3 {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  background-color: rgba(20, 30, 76, 0.9);
+  border-radius: 5px;
+  padding: 0.25rem 0;
+  margin-bottom: 0.5rem;
+  margin-top: -25px;
+  z-index: 1;
+}
+
+/* --------------------------------------RESPONSIVE */
+@media (max-width: 768px) {
+  .welcome h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .trainers .trainer-wrapper {
+    width: calc(100% / 3);
+  }
+}
+
+@media (max-width: 768px) {
+  .trainers .trainer-wrapper {
+    width: 50%;
+  }
+
+  .trainers .trainer {
+    min-height: 310px;
+  }
+}
+
+@media (max-width: 576px) {
+  .trainers .trainer-wrapper {
+    width: 100%;
+  }
+
+  .trainers .trainer {
+    min-height: 0;
+  }
+
+  .trainer p {
+    margin-bottom: 0.5rem;
+  }
+}
